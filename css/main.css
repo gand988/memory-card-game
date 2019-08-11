@@ -6,6 +6,15 @@
 				box-sizing: border-box;
 }
 
+*{
+	/* remove seletion so is impossible to see the number */
+	  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+}
 body{
 	padding: 0;
 	margin: 0;
@@ -18,48 +27,103 @@ body{
 .info{
 	font-size: 20px; 
 	color: white; 
+	display: flex; 
+	padding: 0 10px; 
+	justify-content: space-between;
 }
 .row{
+	position: relative; 
 	padding: 10px; 
 	border: 1px solid rgba(255,255,255,0.5); 
 }
 .card{
-	position: relative; 
+	position: relative;
+	border-radius: 3px;
 	display: inline-block;
-  height: 100px;
-	width: 50px; 
-  border: 1px solid #de5959;
-  font-size: 25px;
-	margin: 5px;
-	line-height: 100px;
-	text-align: center; 
-
-  transform: rotateY(180deg);
+	height: 60px;
+	width: 46px;
+	border: 2px solid #de5959;
+	font-size: 18px;
+	margin: 3px;
+	line-height: 60px;
+	text-align: center;
+	transform: rotateY(180deg);
 	background-color: #313131;
-	color: transparent; 
+	color: transparent;
 	transition: all .3s ease, color .1s ease;
 	box-shadow: -3px 3px 0px 0px black;
-	
+
+	/* debugger code */
   /* transform: rotateY(0deg); */
 	/* color: white;  */
 }
 .card:hover{
 	box-shadow: 0px 0px 2px 2px aquamarine;
 }
-/* .card::after{
-	position: absolute; 
-	top: 0; 
-	left: 0; 
-	width: 100%; 
-	height: 100%; 
-	content: ''; 
-	z-index: 10;
-	background-color: #fff;
-} */
+
 .flip{
 	transform: rotateY(0deg); 
 	background-color: #de5959;
 	color: white; 
 	transition: all .3s ease; 
 	box-shadow: 0px 0px 0px 0px black; 
+}
+/* card : width: 40px;  */
+@media screen and (min-width: 320px){
+
+}
+@media screen and (min-width: 576px){}
+@media screen and (min-width: 768px){
+	.card{
+		height: 100px;
+		width: 50px; 
+		font-size: 25px;
+		margin: 5px;
+		line-height: 100px;
+	}
+}
+@media screen and (min-width: 996px){}
+@media screen and (min-width: 1250px){}
+@media screen and (min-width: 1600px){}
+
+/* #container { display:block; } */
+
+@media only screen and (orientation:portrait){
+
+}
+
+@media only screen and (orientation:landscape){
+	/* .card{
+		width: 40px;
+	} */
+}
+
+.congrat{
+	position: absolute; 
+	display: flex; 
+	display: none;
+	
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	top: 0; 
+	left: 0; 
+	width: 100%; 
+	height: 100%; 
+	background-color: #123456;
+	z-index: 10;
+}
+.congrat h1, 
+.congrat p{
+	color: white; 
+}
+
+.credit{
+	text-align: center;
+	color: white; 
+	font-size: 20px; 	
+	padding: 2px; 
+}
+.credit a{
+	color: white; 
 }
